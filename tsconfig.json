@@ -1,0 +1,35 @@
+{
+  "compilerOptions": {
+    "lib": ["es6", "dom"],
+    "sourceMap": true,
+    "target": "es5",
+    "module": "commonjs",
+    "allowJs": true,
+    "checkJs": true,
+    "strict": true,
+    "baseUrl": "./",
+    "paths": {
+      "@/*": ["src/*"],
+      "@assets/*": ["src/assets/*"],
+      "@css/*": ["src/css/*"],
+      "@tpl/": ["src/template/*"],
+      "~/*": ["src/*"],
+      "~assets/*": ["src/assets/*"],
+      "~css/*": ["src/css/*"],
+      "~tpl/*": ["src/template/*"]
+    },
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "outDir": "./out",
+    "declaration": true
+  },
+  "exclude": ["node_modules", "dist", "demo", "build", "docs"],
+  "include": ["src", "types"],
+  "ts-node": {
+    "files": true,
+    "compilerOptions": {
+      "esModuleInterop": true
+    }
+  }
+}
