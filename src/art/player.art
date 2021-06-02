@@ -1,0 +1,16 @@
+<div id="athm-player">
+  <div class="athm-player-container">
+    <div class="athm-player-wrap">
+      <div>
+        <div class="athm-player-video-wrap">
+          <div class="athm-player-top">{{ top }}</div>
+          <div class="athm-player-content"></div>
+          <div class="athm-player-danmaku"></div>
+          <div class="athm-player-control">
+          </div>
+        </div>
+        <div class="athm-player-bottom"></div>
+      </div>
+    </div>
+  </div>
+</div>
