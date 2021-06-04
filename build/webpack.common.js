@@ -8,7 +8,7 @@ const version = require('../package.json').version;
 
 module.exports = {
   entry: {
-    main: './src/test/index.js',
+    main: './test/index.js',
   },
   output: {
     path: path.resolve(__dirname, '../dist'),
@@ -56,6 +56,8 @@ module.exports = {
   plugins: [
     new webpack.DefinePlugin({
       GLOBAL_VERSION: `${version}`,
+      DPLAYER_VERSION: 1,
+      GIT_HASH: 1,
     }),
     new WebpackBar(),
     new FriendlyErrorsPlugin({
@@ -63,7 +65,7 @@ module.exports = {
     }),
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, '../src/test/index.html'),
+      template: path.resolve(__dirname, '../test/index.html'),
     }),
   ],
 };
