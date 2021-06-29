@@ -5,9 +5,10 @@
   "license": "MIT",
   "scripts": {
     "dev": "webpack serve --config ./build/webpack.dev.js",
-    "build": "webpack --config ./build/webpack.prod.js"
+    "serve": "yarn run dev",
+    "build": "webpack --config ./build/webpack.prod.js",
+    "lint": "eslint \"**/*.js\" --fix && prettier \"**/*.{js,json,md}\" --write"
   },
-  "dependencies": {},
   "devDependencies": {
     "art-template": "^4.13.2",
     "art-template-loader": "^1.4.3",
@@ -29,5 +30,10 @@
     "webpack-dev-server": "^3.11.2",
     "webpack-merge": "^5.7.3",
     "webpackbar": "^5.0.0-3"
+  },
+  "dependencies": {
+    "danmaku": "^2.0.2",
+    "loadsh": "^0.0.4",
+    "lodash-es": "^4.17.21"
   }
 }

@@ -1,3 +1,12 @@
+$prefix: 'atplayer';
+
+@import './layout.scss';
+@import './controls.scss';
+@import './balloon.scss';
+@import './bezel.scss';
+@import './danmaku.scss';
+@import './infopanel.scss';
+
 #athm-player {
   position: relative;
   width: 800px;

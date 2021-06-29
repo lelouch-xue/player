@@ -9,7 +9,7 @@ import { DEBUG_ENABLE, DEUBG_PREFIX } from '../config';
 
 const noop = () => {};
 
-export class Console {
+class Console {
   constructor(enabled = false) {
     this.enabled = window.console && enabled;
 

@@ -1,0 +1,47 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/hls.js/dist/hls.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flv.js/dist/flv.min.js"></script>
+    <style>
+      html, body, hr {
+        margin: 5px;
+      }
+      #my-player1, #my-player2 {
+        width: 800px;
+        height: 450px;
+        margin: 0 auto;
+      }
+      hr {
+        width: 800px;
+        margin: 5px auto;
+      }
+
+      input {
+        outline: none;
+      }
+
+      #interactive {
+        width: 800px;
+        margin: 5px auto;
+      }
+      button {
+        margin-left: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="my-player1"></div>
+    <div id="interactive">
+      <input type="text" id="input-text"/>
+      <button id="btn-sendDanma-01">发送弹幕</button>
+      <button id="btn-sendDanma-02">发送50条弹幕</button>
+      <button id="btn-sendDanma-03">发送100条弹幕</button>
+    </div>
+    <hr>
+    <div id="my-player2"></div>
+  </body>
+</html>
