@@ -21,6 +21,7 @@ class TplController {
    */
   init() {
     // controller
+    const wrap = this.container.querySelector('.atplayer-video-controls--wrap');
     const _progress = '.atplayer-video-controls--wrap .atplayer-controls--progress';
     const _content = '.atplayer-video-controls--wrap .atplayer-controls--content';
 
@@ -65,6 +66,7 @@ class TplController {
     }
 
     this.template = {
+      wrap,
       progress,
       time,
       thumbnails,

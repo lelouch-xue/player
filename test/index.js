@@ -64,10 +64,10 @@ btn03.onclick = function () {
 
 // const player2 = new Player({
 //   container: '#my-player2',
-//   live: true,
+//   live: false,
 //   video: {
 //     loop: false,
-//     url: 'https://api.dogecloud.com/player/get.flv?vcode=5ac682e6f8231991&userId=17&ext=.flv',
+//     url: 'http://hdllive-sale.autohome.com.cn/athmlive-sale/z1_athmlive-sale_102111.flv',
 //     autoplay: true,
 //     type: 'flv',
 //     muted: false,

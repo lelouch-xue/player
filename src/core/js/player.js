@@ -20,7 +20,7 @@ import ContextMenu from './contextmenu';
 import defaultConfig from '../config/default';
 import Bezel from './bezel';
 import { merge } from 'lodash-es';
-
+import PBP from '../expand/pbp';
 class Player {
   // 容器
   // target tag
@@ -43,6 +43,9 @@ class Player {
     this.fullScreen = new FullScreen(this);
     this.controller = new Controller(this);
     this.contextMenu = new ContextMenu(this);
+
+    this.pbp = new PBP(this);
+
     this.plugins = {};
 
     this.initConfig();
@@ -57,6 +60,42 @@ class Player {
    */
   initConfig() {
     this.video.volume = 0.4;
+
+    function calculationOffsetY(obj) {
+      //obj为所要计算的元素,可用id或class获取
+      var top = 0;
+      if (obj.offsetParent) {
+        do {
+          top += obj.offsetTop;
+        } while ((obj = obj.offsetParent));
+        return top;
+      }
+    }
+
+    const target = this.container;
+    const _offset = calculationOffsetY(target);
+    const _height = target.offsetHeight;
+    const _threshold = 10;
+    this.isMini = false;
+
+    window.onscroll = function () {
+      //为了保证兼容性，这里取两个值，哪个有值取哪一个
+      //scrollTop就是触发滚轮事件时滚轮的高度
+      var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
+      if (scrollTop >= _offset + _height + _threshold) {
+        const _ismini = true;
+        if (this.isMini !== _ismini) {
+          this.isMini = true;
+          _debug.log('trigger mini mode');
+        }
+      } else {
+        const _ismini = false;
+        if (this.isMini !== _ismini) {
+          this.isMini = false;
+          _debug.log('cancel mini mode');
+        }
+      }
+    };
   }
 
   /**

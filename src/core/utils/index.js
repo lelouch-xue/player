@@ -149,6 +149,10 @@ const utils = {
       }, duration);
     });
   },
+
+  cccc: () => {
+    const top = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
+  },
 };
 
 export default utils;

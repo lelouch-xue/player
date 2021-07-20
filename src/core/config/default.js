@@ -30,6 +30,9 @@ const defaultConfig = {
     active: true, // 是否激活
   },
   pluginOptions: { hls: {}, flv: {}, dash: {}, webtorrent: {} },
+  mini: {
+    active: true,
+  }
 };
 
 export default defaultConfig;
