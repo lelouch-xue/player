@@ -1,0 +1,28 @@
+<!--
+  此art文件是整个播放器的layout框架
+  具体的某个播放器部分，需单独的art文件包含
+ -->
+<div class="atplayer-field">
+  <div class="atplayer-container">
+    <div class="atplayer-video--wrap">
+      <div class="atplayer-video-content--wrap">
+      </div>
+      <div class="atplayer-video-top--warp"></div>
+      <div class="atplayer-video-danmaku--wrap">
+        <div id="atplayer-video-danmaku-pool">
+
+        </div>
+      </div>
+      <div class="atplayer-video-mask--wrap"></div>
+      <div class="atplayer-video-bezel--wrap">
+      </div>
+      <div class="atplayer-video-controls-mask--wrap">
+      </div>
+      <div class="atplayer-video-controls--wrap">
+      </div>
+
+      <div class="atplayer-video-info-panel--wrap">
+      </div>
+    </div>
+  </div>
+</div>

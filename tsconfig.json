@@ -8,6 +8,7 @@
     "checkJs": true,
     "strict": true,
     "baseUrl": "./",
+    "noImplicitAny": false,
     "paths": {
       "@/*": ["src/*"],
       "@assets/*": ["src/assets/*"],
@@ -21,7 +22,6 @@
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
-    "outDir": "./out",
     "declaration": true
   },
   "exclude": ["node_modules", "dist", "demo", "build", "docs"],

@@ -1,0 +1,37 @@
+.#{$prefix}-video-bezel--wrap {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  font-size: 22px;
+  color: #fff;
+  pointer-events: none;
+  .#{$prefix}-bezel-icon {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin: -26px 0 0 -26px;
+      height: 52px;
+      width: 52px;
+      padding: 12px;
+      box-sizing: border-box;
+      background: rgba(0, 0, 0, .5);
+      border-radius: 50%;
+      opacity: 0;
+      pointer-events: none;
+      &.#{$prefix}-bezel-transition {
+          animation: bezel-hide .3s linear;
+      }
+      @keyframes bezel-hide {
+          from {
+              opacity: 1;
+              transform: scale(1);
+          }
+          to {
+              opacity: 0;
+              transform: scale(2);
+          }
+      }
+  }
+}

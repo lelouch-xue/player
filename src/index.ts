@@ -1,39 +1,23 @@
-/**
- * @Author: Xuejian
- * @Date: 2021-05-26 15:21:24
- * @ModifiedBy: Xuejian
- * @ModifiedTime: 2021-05-26 15:21:24
- */
-
-import { test } from "~/core/utils/index";
-import PlayerTpl from "~/core/component/playerTpl";
-// import "~css/index.scss";
-
+// import Template from './template';
+// import './css/index.scss';
 class Player {
+  container: HTMLElement | null;
+  options: unknown;
+  // template!: Template;
+  constructor(target: string, options: unknown) {
+    this.container = document.querySelector(target);
+    this.options = options;
 
-  // 容器
-  container: HTMLElement | undefined  = undefined;
-  // target tag
-  target: string = "";
-
-  constructor(option: any) {
-    const {
-      el
-    } = option;
-
-    const _dom = document.querySelector(el);
-    this.container = _dom ?? undefined;
-    this.target = el;
-    const playerTpl: any = new PlayerTpl({});
-
-    this.container?.appendChild(playerTpl);
-    test();
+    // this.initTmpl();
   }
 
   /**
-   * 初始化播放器
+   * 初始化模板
    */
-  init() {}
+  // initTmpl() {
+  //   this.template = new Template(this.options);
+  //   console.log(123132);
+  // }
 }
-
+console.log(123123);
 export default Player;

@@ -1,4 +1,3 @@
 declare module '*.art' {
-  import artTemplate from 'art-template';
-  export default artTemplate;
+  export default function art(arg: unknown): string;
 }

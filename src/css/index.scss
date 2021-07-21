@@ -1,5 +1,39 @@
+$prefix: 'atplayer';
+
+@import './layout.scss';
+@import './controls.scss';
+@import './balloon.scss';
+@import './bezel.scss';
+@import './danmaku.scss';
+@import './infopanel.scss';
+
 #athm-player {
   position: relative;
   width: 800px;
   height: 450px;
+
+  .athm-player-container {
+    background-color: orange;
+    width: 800px;
+    height: 450px;
+
+    .athm-player-video-wrap {
+      width: 100%;
+      height: 100%;
+      position: relative;
+
+      .athm-player-content {
+
+      }
+      .athm-player-control {
+        position: absolute;
+        display: flex;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 50px;
+        background-color: gray;
+      }
+    }
+  }
 }

@@ -1,0 +1,17 @@
+// {{ set enableSubtitle = subtitle && subtitle.type === 'webvtt' }}
+// <video
+//     class="atplayer-video"
+//     id="atplayer-video1"
+//     webkit-playsinline
+//     playsinline
+//     {{ if pic }}poster="{{ pic }}"{{ /if }}
+//     {{ if preload }}preload="{{ preload }}"{{ /if }}
+//     {{ if opts.video.autoplay }}autoplay{{ /if }}
+//     {{ if opts.video.loop }}loop{{ /if }}
+//     {{ if opts.video.muted }}muted{{ /if }}
+//     src="{{ opts.video.url }}"
+//     type="{{ opts.video.type }}"
+//     >
+// </video>
+
+<div></div>

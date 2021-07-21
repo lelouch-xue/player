@@ -6,14 +6,21 @@ const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin');
 
 module.exports = {
   entry: {
-    main: './src/index.ts',
+    player: './src/index.ts',
   },
   output: {
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, '../dist'),
     filename: '[name].bundle.js',
+    library: 'Player',
+    libraryTarget: 'iife',
+    libraryExport: 'default',
+    umdNamedDefine: true,
+    publicPath: '/',
   },
+  target: 'web',
   resolve: {
     extensions: ['.ts', '.js'],
+    preferRelative: true,
     alias: {
       '~': path.resolve(__dirname, '../src'),
       '~assets': path.resolve(__dirname, '../src/assets/'),
@@ -61,7 +68,11 @@ module.exports = {
     }),
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, '../src/test/index.html'),
+      title: '测试页面',
+      template: path.resolve(__dirname, '../public/index.html'),
+      filename: 'index.html',
+      inject: 'head',
+      scriptLoading: 'blocking',
     }),
   ],
 };

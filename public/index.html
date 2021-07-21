@@ -1,0 +1,85 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    html,
+    body,
+    hr {
+      margin: 5px;
+    }
+
+    #my-player,
+    #my-player1,
+    #my-player2 {
+      width: 800px;
+      height: 450px;
+      margin: 0 auto;
+    }
+
+    /* #my-player2 {
+        height: 2000px;
+      } */
+    hr {
+      width: 800px;
+      margin: 5px auto;
+    }
+
+    input {
+      outline: none;
+    }
+
+    #interactive {
+      width: 800px;
+      margin: 5px auto;
+    }
+
+    button {
+      margin-left: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="my-player"></div>
+  <div id="interactive">
+    <input type="text" id="input-text" />
+    <button id="btn-sendDanma-01">发送弹幕</button>
+    <button id="btn-sendDanma-02">发送50条弹幕</button>
+    <button id="btn-sendDanma-03">发送100条弹幕</button>
+  </div>
+</body>
+<script>
+  const player = new Player('#my-player', {
+    container: '',
+    // 是否直播
+    live: true,
+    // 视频源信息
+    video: {
+      url: '',
+      type: 'mp4',
+      poster: '', // 视频封面
+      loop: false, // 是否开启循环播放
+      muted: false, // 是否开启静音
+      autoplay: true, // 是否开启自动播放
+      volume: 40, // 默认声音大小
+    },
+    danmaku: {
+      active: false,
+    },
+    // 预览缩略图
+    preview: {
+      active: true, // 是否激活
+    },
+    pluginOptions: { hls: {}, flv: {}, dash: {}, webtorrent: {} },
+    mini: {
+      active: true,
+    },
+  });
+  console.log(player);
+</script>
+
+</html>

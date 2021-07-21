@@ -1,0 +1,23 @@
+<div class="atplayer-video-info-panel-item atplayer-video-info-panel-title">
+  <h4>汽车之家播放器</h4>
+</div>
+<div class="atplayer-video-info-panel-item" data-value="home">
+  <i>
+    {{@ icons.home }}
+  </i>
+  <span>之家首页</span>
+</div>
+<div class="atplayer-video-info-panel-item" data-value="link">
+  <i>
+    {{@ icons.link }}
+  </i>
+  <span>复制链接</span>
+</div>
+<div class="atplayer-video-info-panel-item" data-value="version">
+  <i>
+    {{@ icons.version }}
+  </i>
+  <span>版本号: {{ source.version }}</span>
+</div>
+<input type="text" id="info-link" value="{{ source.link }}"/>
+<input type="text" id="info-version" value="{{ source.version }}"/>
