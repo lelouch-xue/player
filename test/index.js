@@ -1,4 +1,5 @@
 import Player from '~/core/index';
+import { getLiveInfo } from '../src/core/api';
 
 const player1 = new Player({
   container: '#my-player1',
@@ -48,20 +49,19 @@ btn03.onclick = function () {
       });
     });
 };
-// const player2 = new Player({
-//   container: '#my-player2',
-//   live: false,
-//   video: {
-//     loop: false,
-//     url: 'https://vc9-al1-pl-agv.autohome.com.cn/video-46/889E92CFB4EAA501/2021-05-21/6070A1532CA81F566F15C4841F4F2CE2-300/index.m3u8?key=06A798650EBDADC01FA2A0C9656455A1',
-//     autoplay: true,
-//     type: 'hls',
-//   },
-//   danmaku: {
-//     active: false,
-//   },
-// });
-
+const player2 = new Player({
+  container: '#my-player2',
+  live: false,
+  video: {
+    loop: false,
+    url: 'http://vc9-tx2-pl-agv.autohome.com.cn/video-5/889E92CFB4EAA501/2021-07-19/76E546C722FF157D6F15C4841F4F2CE2-300/index.m3u8?key=8A48019BFC9FBEFC342D97F85362CBE4',
+    autoplay: true,
+    type: 'hls',
+  },
+  danmaku: {
+    active: false,
+  },
+});
 // const player2 = new Player({
 //   container: '#my-player2',
 //   live: false,
@@ -76,3 +76,5 @@ btn03.onclick = function () {
 //     active: false,
 //   },
 // });
+console.log(111)
+getLiveInfo(103054).then((res) => console.log(res));

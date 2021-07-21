@@ -34,6 +34,7 @@
   },
   "dependencies": {
     "danmaku": "^2.0.2",
+    "jsonp": "^0.2.1",
     "loadsh": "^0.0.4",
     "lodash-es": "^4.17.21"
   }

@@ -153,6 +153,17 @@ const utils = {
   cccc: () => {
     const top = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
   },
+
+  getUrlQuerys: () => {
+    const s = location.search.length ? location.search.substring(1) : '';
+    const a = s.length ? s.split('&') : [];
+    let r = {};
+    a.forEach((item) => {
+      let t = item.split('=');
+      r[decodeURIComponent(t[0])] = decodeURIComponent(t[1]);
+    });
+    return r;
+  },
 };
 
 export default utils;
