@@ -1,0 +1,53 @@
+.atplayer-sendbar--wrap {
+  // background-color: #ddd;
+  height: 46px;
+  padding: 8px 0;
+}
+
+.atplayer-sendbar {
+  height: 30px;
+  background: #f4f4f4;
+
+  .atplayer-send--wrap {
+    height: 30px;
+    // width: 200px;
+    border-radius: 2px 0 0 2px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex: 1;
+    border: 1px solid #e7e7e7;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    #atplayer-send-input {
+      color: #212121;
+      -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+      flex-grow: 1;
+      border: 0;
+      height: 30px;
+      line-height: 30px;
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+      z-index: 12;
+      padding: 0 5px;
+      background: none;
+      font-size: 12px;
+      min-width: 100px;
+      width: 100%;
+    }
+  }
+
+  #atplayer-send-btn {
+    z-index: 13;
+    height: 30px;
+    width: 60px;
+    min-width: 60px;
+    line-height: 30px;
+    text-align: center;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    border-radius: 0 2px 2px 0;
+    background-color: #00b5e5;
+  }
+}

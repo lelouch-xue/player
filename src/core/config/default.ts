@@ -6,6 +6,22 @@
  * @ModifiedTime: 2021-05-26 14:37:44
  */
 
-const defaultConfig = {};
+const defaultConfig: IPlayerDefaultConfig = {
+  setting: {
+    loop: false,
+    muted: true,
+    autoplay: true,
+    volume: 40,
+  },
+  danmaku: {
+    active: false,
+  },
+  preview: {
+    active: false,
+  },
+  mini: {
+    active: false,
+  },
+};
 
 export default defaultConfig;

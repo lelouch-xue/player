@@ -6,6 +6,7 @@
   <div class="atplayer-container">
     <div class="atplayer-video--wrap">
       <div class="atplayer-video-content--wrap">
+        {{ include './player.art' }}
       </div>
       <div class="atplayer-video-top--warp"></div>
       <div class="atplayer-video-danmaku--wrap">
@@ -15,14 +16,24 @@
       </div>
       <div class="atplayer-video-mask--wrap"></div>
       <div class="atplayer-video-bezel--wrap">
+        {{ include './bezel.art' }}
       </div>
       <div class="atplayer-video-controls-mask--wrap">
       </div>
       <div class="atplayer-video-controls--wrap">
+        {{ include './controls.art' }}
+      </div>
+
+      <div class="atplayer-video-loading--wrap">
+        {{ include './loading.art' }}
       </div>
 
       <div class="atplayer-video-info-panel--wrap">
+        {{ include './info.art' }}
       </div>
     </div>
+  </div>
+  <div class="atplayer-sendbar--wrap">
+    {{ include './chat.art' }}
   </div>
 </div>

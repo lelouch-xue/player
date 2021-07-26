@@ -1,78 +1,85 @@
-const path = require('path');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const WebpackBar = require('webpackbar');
-const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin');
+const path = require("path");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const WebpackBar = require("webpackbar");
+const FriendlyErrorsPlugin = require("friendly-errors-webpack-plugin");
+const webpack = require("webpack");
+const version = require("../package.json").version;
 
 module.exports = {
   entry: {
-    player: './src/index.ts',
+    player: "./src/index.ts",
   },
   output: {
-    path: path.resolve(__dirname, '../dist'),
-    filename: '[name].bundle.js',
-    library: 'Player',
-    libraryTarget: 'iife',
-    libraryExport: 'default',
+    path: path.resolve(__dirname, "../dist"),
+    filename: "[name].bundle.js",
+    library: "Player",
+    libraryTarget: "umd",
+    libraryExport: "default",
     umdNamedDefine: true,
-    publicPath: '/',
+    publicPath: "/",
   },
-  target: 'web',
+  target: "web",
   resolve: {
-    extensions: ['.ts', '.js'],
+    extensions: [".ts", ".js"],
     preferRelative: true,
     alias: {
-      '~': path.resolve(__dirname, '../src'),
-      '~assets': path.resolve(__dirname, '../src/assets/'),
-      '~css': path.resolve(__dirname, '../src/css/'),
-      '~tpl': path.resolve(__dirname, '../src/template/'),
-      '@': path.resolve(__dirname, '../src/'),
-      '@assets': path.resolve(__dirname, '../src/assets/'),
-      '@css': path.resolve(__dirname, '../src/css/'),
-      '@tpl': path.resolve(__dirname, '../src/template/'),
+      "~": path.resolve(__dirname, "../src"),
+      "~assets": path.resolve(__dirname, "../src/assets/"),
+      "~css": path.resolve(__dirname, "../src/css/"),
+      "~tpl": path.resolve(__dirname, "../src/template/"),
+      "@": path.resolve(__dirname, "../src/"),
+      "@assets": path.resolve(__dirname, "../src/assets/"),
+      "@css": path.resolve(__dirname, "../src/css/"),
+      "@tpl": path.resolve(__dirname, "../src/template/"),
     },
   },
   module: {
     rules: [
       {
         test: /\.ts/,
-        use: 'ts-loader',
+        use: "ts-loader",
         exclude: /node_modules/,
       },
       {
         test: /\.s[ac]ss$/,
-        use: ['style-loader', 'css-loader', 'sass-loader'],
+        use: ["style-loader", "css-loader", "sass-loader"],
         exclude: /node_modules/,
       },
       {
         test: /\.(png|jpg)$/,
-        loader: 'url-loader',
+        loader: "url-loader",
         options: {
           limit: 40000,
         },
       },
       {
         test: /\.svg$/,
-        loader: 'svg-inline-loader',
+        loader: "svg-inline-loader",
       },
       {
         test: /\.art$/,
-        loader: 'art-template-loader',
+        loader: "art-template-loader",
       },
     ],
   },
   plugins: [
+    new webpack.DefinePlugin({
+      GLOBAL_VERSION: JSON.stringify(version),
+      DPLAYER_VERSION: 1,
+      GIT_HASH: 1,
+    }),
     new WebpackBar(),
     new FriendlyErrorsPlugin({
       clearConsole: true,
     }),
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      title: '测试页面',
-      template: path.resolve(__dirname, '../public/index.html'),
-      filename: 'index.html',
-      inject: 'head',
-      scriptLoading: 'blocking',
+      title: "测试页面",
+      template: path.resolve(__dirname, "../public/index.html"),
+      filename: "index.html",
+      inject: "body",
+      scriptLoading: "blocking",
     }),
   ],
 };

@@ -1,3 +1,5 @@
-declare module '*.art' {
+declare module "*.art" {
   export default function art(arg: unknown): string;
 }
+
+declare module "*.svg";

@@ -1,0 +1,3 @@
+<div class="atplayer-video-loading" {{ if isloading }} style="display: flex;"  {{ /if }}>
+  <div>加载中...</div>
+</div>

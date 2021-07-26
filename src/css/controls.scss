@@ -5,7 +5,7 @@
   width: 100%;
   left: 0;
   right: 0;
-  opacity: 0;
+  opacity: 1;
   transition: opacity 0.1s ease-in-out;
 
   .#{$prefix}-controls--progress {
@@ -231,16 +231,15 @@
         justify-content: flex-start;
         align-items: center;
         margin-right: 16px;
+        position: relative;;
 
         .#{$prefix}-volume-box {
           display: flex;
           justify-content: flex-start;
           align-items: center;
           position: relative;
-          margin-right: 5px;
 
           .#{$prefix}-volume-btn {
-            margin-right: 5px;
             .#{$prefix}-volume-icon {
               width: 26px;
               height: 24px;
@@ -279,26 +278,40 @@
           }
         }
 
-        .#{$prefix}-volume-progress {
-          position: relative;
-          width: 85px;
-          height: 8px;
-          padding: 10px 0;
+        .#{$prefix}-volume-bar{
+          position: absolute;
+          bottom: 30px;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 14px;
+          padding: 10px 5px;
+          background-color: rgba(21,21,21,.9);
 
-          .#{$prefix}-volume-bar {
-            position: relative;
-            height: 8px;
-            margin: 0 auto;
+          border-radius: 2px;
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          flex-direction: column;
+
+          .#{$prefix}-volume-bar-mark {
+            color: #fff;
+            font-size: 12px;
+          }
+
+          .#{$prefix}-volume-progress {
+            width: 3px;
+            height: 80px;
             cursor: pointer;
+            background-color: gray;
+            margin-top: 5px;
+            position: relative;
 
-            .#{$prefix}-volume-bar-mark, .#{$prefix}-volume-bar-size {
+            .#{$prefix}-volume-bar-size {
               position: absolute;
-              top: 50%;
               bottom: 0;
-              height: 3px;
-              width: 100%;
-              transform: translateY(-50%);
-              border-radius: 3px;
+              height: 30%;
+              width: 3px;
+              border-radius: 2px;
             }
 
             .#{$prefix}-volume-bar-mark {
@@ -306,12 +319,12 @@
             }
 
             .#{$prefix}-volume-bar-size {
-              background-color: #ff6600;
+              background-color: goldenrod;
             }
 
             .#{$prefix}-volume-thumb {
               position: absolute;
-              right: -3px;
+              left: -3px;
               top: -3px;
               height: 9px;
               width: 9px;
@@ -348,7 +361,7 @@
   background-color: transparent;
   border: none;
   outline: none;
-  padding: 0 3px;
+  padding: 0;
 }
 
 .atplayer-show {

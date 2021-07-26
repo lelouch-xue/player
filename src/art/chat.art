@@ -1,0 +1,10 @@
+<div class="flex-row atplayer-sendbar">
+  <div class="atplayer-send--wrap flex-row">
+    <input
+      type="text"
+      id="atplayer-send-input"
+      placeholder="发个友善的弹幕见证当下"
+    />
+  </div>
+  <button id="atplayer-send-btn">发送</button>
+</div>
